@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. $(dirname $0)/global.sh
+
 all_hosts=${all_hosts:-"andvari01 andvari02 andvari03 andvari04 andvari05 andvari06 andvari07 andvari08"}
 monitors=${monitors:-"andvari01 andvari02 andvari03"}
 osds=${osds:-$all_hosts}
@@ -9,7 +11,7 @@ pdsh_hosts=${all_hosts// /,}
 
 function clean_ceph()
 {
-	local hosts =$1
+	local hosts=$1
 	local pdsh_hosts=${hosts// /,}
 
 	echo "*********** Clean ceph **********************"
@@ -31,54 +33,53 @@ function create_new_cluster()
 
 function install_ceph()
 {
-	local hosts =$1
+	local hosts=$1
 	local pdsh_hosts=${hosts// /,}
 
 	ceph-deploy --overwrite-conf install --no-adjust-repos  $hosts
 	ceph-deploy mon create-initial
 	ceph-deploy admin $hosts
 	sudo pdsh -w $pdsh_hosts  chmod +rx /etc/ceph/ceph.client.admin.keyring # Mellanox wiki
+#	ceph-deploy gatherkeys
 }
 
 function create_osd()
 {
 	local hosts=$1
-	local disks=$2
+	# Nodes and discovered OSD's Array format: node1:sdb
+	local list=(`discover_osds "${hosts}" | xargs`)
 
-	local list
-	local 
-
-	for host in ${hosts}; do
-		for disk in ${disks}; do
-			list="${list} ${host}:${disk}"
-
-		done
+	# clean disks
+	for i in "${list[@]}"; do
+		ceph-deploy disk zap $i
 	done
 
-	echo list
+	# ceph-deploy prepare disks
+	for i in "${list[@]}"; do
+		ceph-deploy --overwrite-conf osd prepare $i
+	done
 
-	ceph-deploy --overwrite-conf disk zap $list
-	ceph-deploy --overwrite-conf osd prepare $list
+	# ceph-deploy activate disks
+	for i in "${list[@]}"; do
+		#strip trailing white space from $i
+		osd=$(echo "$i" | sed 's/\s*$//g')
+		ceph-deploy osd activate "$osd"1
+	done
 }
 
-while getopts "d:" flag_arg; do
-	case $flag_arg in
-		d) disks="$OPTARG"         ;;
-	esac
-done
-
-if [ -z "$disks" ];
-	"Error: Provide a list of disks"
-	exit
-fi
+#while getopts "h:" flag_arg; do
+#	case $flag_arg in
+#		d) hosts="$OPTARG"         ;;
+#	esac
+#done
 
 echo "List of hosts: $all_hosts"
 echo "Monitors: $monitors"
 echo "OSDs: $osds"
 
 clean_ceph $all_hosts
-
+install_ceph $all_hosts
 create_new_cluster $monitors $selected_network
-
+create_osd $osds
 
 ceph -s
