@@ -1,0 +1,253 @@
+[ceph_deploy.conf][DEBUG ] found configuration file at: /labhome/sashakot/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.25): /usr/bin/ceph-deploy --overwrite-conf install --no-adjust-repos andvari02 andvari03 andvari01 andvari05 andvari04 andvari08 andvari07 andvari06
+[ceph_deploy.install][DEBUG ] Installing stable version hammer on cluster ceph hosts andvari02 andvari03 andvari01 andvari05 andvari04 andvari08 andvari07 andvari06
+[ceph_deploy.install][DEBUG ] Detecting platform for host andvari02 ...
+[andvari02][DEBUG ] connection detected need for sudo
+[andvari02][DEBUG ] connected to host: andvari02 
+[andvari02][DEBUG ] detect platform information from remote host
+[andvari02][DEBUG ] detect machine type
+[ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.2.1511 Core
+[andvari02][INFO  ] installing ceph on andvari02
+[andvari02][INFO  ] Running command: sudo yum clean all
+[andvari02][DEBUG ] Loaded plugins: fastestmirror, langpacks, priorities
+[andvari02][DEBUG ] Cleaning repos: Ceph Ceph-noarch MLNX-mirror MLNX-optional-packages-mirror base
+[andvari02][DEBUG ]               : ceph-source cr epel extras updates
+[andvari02][DEBUG ] Cleaning up everything
+[andvari02][DEBUG ] Cleaning up list of fastest mirrors
+[andvari02][INFO  ] Running command: sudo yum -y install ceph ceph-radosgw
+[andvari02][DEBUG ] Loaded plugins: fastestmirror, langpacks, priorities
+[andvari02][DEBUG ] Determining fastest mirrors
+[andvari02][DEBUG ]  * base: centos.aumix.net
+[andvari02][DEBUG ]  * epel: mirror.nonstop.co.il
+[andvari02][DEBUG ]  * extras: centos.aumix.net
+[andvari02][DEBUG ]  * updates: centos.aumix.net
+[andvari02][DEBUG ] 30 packages excluded due to repository priority protections
+[andvari02][DEBUG ] Resolving Dependencies
+[andvari02][DEBUG ] --> Running transaction check
+[andvari02][DEBUG ] ---> Package ceph.x86_64 1:0.94.10-0.el7 will be installed
+[andvari02][DEBUG ] --> Processing Dependency: ceph-common = 1:0.94.10-0.el7 for package: 1:ceph-0.94.10-0.el7.x86_64
+[andvari02][DEBUG ] ---> Package ceph-radosgw.x86_64 1:0.94.10-0.el7 will be installed
+[andvari02][DEBUG ] --> Running transaction check
+[andvari02][DEBUG ] ---> Package ceph-common.x86_64 1:0.94.10-0.el7 will be installed
+[andvari02][DEBUG ] --> Finished Dependency Resolution
+[andvari02][DEBUG ] 
+[andvari02][DEBUG ] Dependencies Resolved
+[andvari02][DEBUG ] 
+[andvari02][DEBUG ] ================================================================================
+[andvari02][DEBUG ]  Package              Arch           Version                 Repository    Size
+[andvari02][DEBUG ] ================================================================================
+[andvari02][DEBUG ] Installing:
+[andvari02][DEBUG ]  ceph                 x86_64         1:0.94.10-0.el7         Ceph          20 M
+[andvari02][DEBUG ]  ceph-radosgw         x86_64         1:0.94.10-0.el7         Ceph         2.3 M
+[andvari02][DEBUG ] Installing for dependencies:
+[andvari02][DEBUG ]  ceph-common          x86_64         1:0.94.10-0.el7         Ceph         7.2 M
+[andvari02][DEBUG ] 
+[andvari02][DEBUG ] Transaction Summary
+[andvari02][DEBUG ] ================================================================================
+[andvari02][DEBUG ] Install  2 Packages (+1 Dependent package)
+[andvari02][DEBUG ] 
+[andvari02][DEBUG ] Total download size: 30 M
+[andvari02][DEBUG ] Installed size: 113 M
+[andvari02][DEBUG ] Downloading packages:
+[andvari02][DEBUG ] --------------------------------------------------------------------------------
+[andvari02][DEBUG ] Total                                              4.8 MB/s |  30 MB  00:06     
+[andvari02][DEBUG ] Running transaction check
+[andvari02][DEBUG ] Running transaction test
+[andvari02][DEBUG ] Transaction test succeeded
+[andvari02][DEBUG ] Running transaction
+[andvari02][DEBUG ]   Installing : 1:ceph-common-0.94.10-0.el7.x86_64                           1/3 
+[andvari02][DEBUG ]   Installing : 1:ceph-0.94.10-0.el7.x86_64                                  2/3 
+[andvari02][DEBUG ]   Installing : 1:ceph-radosgw-0.94.10-0.el7.x86_64                          3/3 
+[andvari02][DEBUG ]   Verifying  : 1:ceph-0.94.10-0.el7.x86_64                                  1/3 
+[andvari02][DEBUG ]   Verifying  : 1:ceph-radosgw-0.94.10-0.el7.x86_64                          2/3 
+[andvari02][DEBUG ]   Verifying  : 1:ceph-common-0.94.10-0.el7.x86_64                           3/3 
+[andvari02][DEBUG ] 
+[andvari02][DEBUG ] Installed:
+[andvari02][DEBUG ]   ceph.x86_64 1:0.94.10-0.el7        ceph-radosgw.x86_64 1:0.94.10-0.el7       
+[andvari02][DEBUG ] 
+[andvari02][DEBUG ] Dependency Installed:
+[andvari02][DEBUG ]   ceph-common.x86_64 1:0.94.10-0.el7                                            
+[andvari02][DEBUG ] 
+[andvari02][DEBUG ] Complete!
+[andvari02][INFO  ] Running command: sudo ceph --version
+[andvari02][DEBUG ] ceph version 0.94.10 (b1e0532418e4631af01acbc0cedd426f1905f4af)
+[ceph_deploy.install][DEBUG ] Detecting platform for host andvari03 ...
+[andvari03][DEBUG ] connection detected need for sudo
+[andvari03][DEBUG ] connected to host: andvari03 
+[andvari03][DEBUG ] detect platform information from remote host
+[andvari03][DEBUG ] detect machine type
+[ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.2.1511 Core
+[andvari03][INFO  ] installing ceph on andvari03
+[andvari03][INFO  ] Running command: sudo yum clean all
+[andvari03][DEBUG ] Loaded plugins: fastestmirror, langpacks
+[andvari03][DEBUG ] Cleaning repos: Ceph Ceph-noarch MLNX-mirror MLNX-optional-packages-mirror base
+[andvari03][DEBUG ]               : ceph-source cr epel extras updates
+[andvari03][DEBUG ] Cleaning up everything
+[andvari03][DEBUG ] Cleaning up list of fastest mirrors
+[andvari03][INFO  ] Running command: sudo yum -y install ceph ceph-radosgw
+[andvari03][DEBUG ] Loaded plugins: fastestmirror, langpacks
+[andvari03][DEBUG ] Determining fastest mirrors
+[andvari03][DEBUG ]  * base: mirror.isoc.org.il
+[andvari03][DEBUG ]  * epel: mirror.nonstop.co.il
+[andvari03][DEBUG ]  * extras: mirror.isoc.org.il
+[andvari03][DEBUG ]  * updates: mirror.isoc.org.il
+[andvari03][DEBUG ] Package 1:ceph-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari03][DEBUG ] Package 1:ceph-radosgw-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari03][DEBUG ] Nothing to do
+[andvari03][INFO  ] Running command: sudo ceph --version
+[andvari03][DEBUG ] ceph version 0.94.10 (b1e0532418e4631af01acbc0cedd426f1905f4af)
+[ceph_deploy.install][DEBUG ] Detecting platform for host andvari01 ...
+[andvari01][DEBUG ] connection detected need for sudo
+[andvari01][DEBUG ] connected to host: andvari01 
+[andvari01][DEBUG ] detect platform information from remote host
+[andvari01][DEBUG ] detect machine type
+[ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.2.1511 Core
+[andvari01][INFO  ] installing ceph on andvari01
+[andvari01][INFO  ] Running command: sudo yum clean all
+[andvari01][DEBUG ] Loaded plugins: fastestmirror, langpacks, priorities
+[andvari01][DEBUG ] Cleaning repos: Ceph Ceph-noarch MLNX-mirror MLNX-optional-packages-mirror base
+[andvari01][DEBUG ]               : ceph-source cr epel extras updates
+[andvari01][DEBUG ] Cleaning up everything
+[andvari01][DEBUG ] Cleaning up list of fastest mirrors
+[andvari01][INFO  ] Running command: sudo yum -y install ceph ceph-radosgw
+[andvari01][DEBUG ] Loaded plugins: fastestmirror, langpacks, priorities
+[andvari01][DEBUG ] Determining fastest mirrors
+[andvari01][DEBUG ]  * base: mirror.isoc.org.il
+[andvari01][DEBUG ]  * epel: mirror.nonstop.co.il
+[andvari01][DEBUG ]  * extras: mirror.isoc.org.il
+[andvari01][DEBUG ]  * updates: mirror.isoc.org.il
+[andvari01][DEBUG ] 30 packages excluded due to repository priority protections
+[andvari01][DEBUG ] Package 1:ceph-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari01][DEBUG ] Package 1:ceph-radosgw-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari01][DEBUG ] Nothing to do
+[andvari01][INFO  ] Running command: sudo ceph --version
+[andvari01][DEBUG ] ceph version 0.94.10 (b1e0532418e4631af01acbc0cedd426f1905f4af)
+[ceph_deploy.install][DEBUG ] Detecting platform for host andvari05 ...
+[andvari05][DEBUG ] connection detected need for sudo
+[andvari05][DEBUG ] connected to host: andvari05 
+[andvari05][DEBUG ] detect platform information from remote host
+[andvari05][DEBUG ] detect machine type
+[ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.2.1511 Core
+[andvari05][INFO  ] installing ceph on andvari05
+[andvari05][INFO  ] Running command: sudo yum clean all
+[andvari05][DEBUG ] Loaded plugins: fastestmirror, langpacks
+[andvari05][DEBUG ] Cleaning repos: Ceph Ceph-noarch MLNX-mirror MLNX-optional-packages-mirror base
+[andvari05][DEBUG ]               : ceph-source cr epel extras updates
+[andvari05][DEBUG ] Cleaning up everything
+[andvari05][DEBUG ] Cleaning up list of fastest mirrors
+[andvari05][INFO  ] Running command: sudo yum -y install ceph ceph-radosgw
+[andvari05][DEBUG ] Loaded plugins: fastestmirror, langpacks
+[andvari05][DEBUG ] Determining fastest mirrors
+[andvari05][DEBUG ]  * base: mirror.isoc.org.il
+[andvari05][DEBUG ]  * epel: mirror.nonstop.co.il
+[andvari05][DEBUG ]  * extras: mirror.isoc.org.il
+[andvari05][DEBUG ]  * updates: mirror.isoc.org.il
+[andvari05][DEBUG ] Package 1:ceph-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari05][DEBUG ] Package 1:ceph-radosgw-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari05][DEBUG ] Nothing to do
+[andvari05][INFO  ] Running command: sudo ceph --version
+[andvari05][DEBUG ] ceph version 0.94.10 (b1e0532418e4631af01acbc0cedd426f1905f4af)
+[ceph_deploy.install][DEBUG ] Detecting platform for host andvari04 ...
+[andvari04][DEBUG ] connection detected need for sudo
+[andvari04][DEBUG ] connected to host: andvari04 
+[andvari04][DEBUG ] detect platform information from remote host
+[andvari04][DEBUG ] detect machine type
+[ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.2.1511 Core
+[andvari04][INFO  ] installing ceph on andvari04
+[andvari04][INFO  ] Running command: sudo yum clean all
+[andvari04][DEBUG ] Loaded plugins: fastestmirror, langpacks
+[andvari04][DEBUG ] Cleaning repos: Ceph Ceph-noarch MLNX-mirror MLNX-optional-packages-mirror base
+[andvari04][DEBUG ]               : ceph-source cr epel extras updates
+[andvari04][DEBUG ] Cleaning up everything
+[andvari04][DEBUG ] Cleaning up list of fastest mirrors
+[andvari04][INFO  ] Running command: sudo yum -y install ceph ceph-radosgw
+[andvari04][DEBUG ] Loaded plugins: fastestmirror, langpacks
+[andvari04][DEBUG ] Determining fastest mirrors
+[andvari04][DEBUG ]  * base: mirror.isoc.org.il
+[andvari04][DEBUG ]  * epel: mirror.nonstop.co.il
+[andvari04][DEBUG ]  * extras: mirror.isoc.org.il
+[andvari04][DEBUG ]  * updates: mirror.isoc.org.il
+[andvari04][DEBUG ] Package 1:ceph-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari04][DEBUG ] Package 1:ceph-radosgw-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari04][DEBUG ] Nothing to do
+[andvari04][INFO  ] Running command: sudo ceph --version
+[andvari04][DEBUG ] ceph version 0.94.10 (b1e0532418e4631af01acbc0cedd426f1905f4af)
+[ceph_deploy.install][DEBUG ] Detecting platform for host andvari08 ...
+[andvari08][DEBUG ] connection detected need for sudo
+[andvari08][DEBUG ] connected to host: andvari08 
+[andvari08][DEBUG ] detect platform information from remote host
+[andvari08][DEBUG ] detect machine type
+[ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.2.1511 Core
+[andvari08][INFO  ] installing ceph on andvari08
+[andvari08][INFO  ] Running command: sudo yum clean all
+[andvari08][DEBUG ] Loaded plugins: fastestmirror, langpacks
+[andvari08][DEBUG ] Cleaning repos: Ceph Ceph-noarch MLNX-mirror MLNX-optional-packages-mirror base
+[andvari08][DEBUG ]               : ceph-source cr epel extras updates
+[andvari08][DEBUG ] Cleaning up everything
+[andvari08][DEBUG ] Cleaning up list of fastest mirrors
+[andvari08][INFO  ] Running command: sudo yum -y install ceph ceph-radosgw
+[andvari08][DEBUG ] Loaded plugins: fastestmirror, langpacks
+[andvari08][DEBUG ] Determining fastest mirrors
+[andvari08][DEBUG ]  * base: mirror.isoc.org.il
+[andvari08][DEBUG ]  * epel: mirror.nonstop.co.il
+[andvari08][DEBUG ]  * extras: mirror.isoc.org.il
+[andvari08][DEBUG ]  * updates: mirror.isoc.org.il
+[andvari08][DEBUG ] Package 1:ceph-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari08][DEBUG ] Package 1:ceph-radosgw-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari08][DEBUG ] Nothing to do
+[andvari08][INFO  ] Running command: sudo ceph --version
+[andvari08][DEBUG ] ceph version 0.94.10 (b1e0532418e4631af01acbc0cedd426f1905f4af)
+[ceph_deploy.install][DEBUG ] Detecting platform for host andvari07 ...
+[andvari07][DEBUG ] connection detected need for sudo
+[andvari07][DEBUG ] connected to host: andvari07 
+[andvari07][DEBUG ] detect platform information from remote host
+[andvari07][DEBUG ] detect machine type
+[ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.2.1511 Core
+[andvari07][INFO  ] installing ceph on andvari07
+[andvari07][INFO  ] Running command: sudo yum clean all
+[andvari07][DEBUG ] Loaded plugins: fastestmirror, langpacks
+[andvari07][DEBUG ] Cleaning repos: Ceph Ceph-noarch MLNX-mirror MLNX-optional-packages-mirror base
+[andvari07][DEBUG ]               : ceph-source cr epel extras updates
+[andvari07][DEBUG ] Cleaning up everything
+[andvari07][DEBUG ] Cleaning up list of fastest mirrors
+[andvari07][INFO  ] Running command: sudo yum -y install ceph ceph-radosgw
+[andvari07][DEBUG ] Loaded plugins: fastestmirror, langpacks
+[andvari07][DEBUG ] Determining fastest mirrors
+[andvari07][DEBUG ]  * base: mirror.isoc.org.il
+[andvari07][DEBUG ]  * epel: mirror.nonstop.co.il
+[andvari07][DEBUG ]  * extras: mirror.isoc.org.il
+[andvari07][DEBUG ]  * updates: mirror.isoc.org.il
+[andvari07][DEBUG ] Package 1:ceph-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari07][DEBUG ] Package 1:ceph-radosgw-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari07][DEBUG ] Nothing to do
+[andvari07][INFO  ] Running command: sudo ceph --version
+[andvari07][DEBUG ] ceph version 0.94.10 (b1e0532418e4631af01acbc0cedd426f1905f4af)
+[ceph_deploy.install][DEBUG ] Detecting platform for host andvari06 ...
+[andvari06][DEBUG ] connection detected need for sudo
+[andvari06][DEBUG ] connected to host: andvari06 
+[andvari06][DEBUG ] detect platform information from remote host
+[andvari06][DEBUG ] detect machine type
+[ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.2.1511 Core
+[andvari06][INFO  ] installing ceph on andvari06
+[andvari06][INFO  ] Running command: sudo yum clean all
+[andvari06][DEBUG ] Loaded plugins: fastestmirror, langpacks
+[andvari06][DEBUG ] Cleaning repos: Ceph Ceph-noarch MLNX-mirror MLNX-optional-packages-mirror base
+[andvari06][DEBUG ]               : ceph-source cr epel extras updates
+[andvari06][DEBUG ] Cleaning up everything
+[andvari06][DEBUG ] Cleaning up list of fastest mirrors
+[andvari06][INFO  ] Running command: sudo yum -y install ceph ceph-radosgw
+[andvari06][DEBUG ] Loaded plugins: fastestmirror, langpacks
+[andvari06][DEBUG ] Determining fastest mirrors
+[andvari06][DEBUG ]  * base: mirror.isoc.org.il
+[andvari06][DEBUG ]  * epel: mirror.nonstop.co.il
+[andvari06][DEBUG ]  * extras: mirror.isoc.org.il
+[andvari06][DEBUG ]  * updates: mirror.isoc.org.il
+[andvari06][DEBUG ] Package 1:ceph-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari06][DEBUG ] Package 1:ceph-radosgw-0.94.10-0.el7.x86_64 already installed and latest version
+[andvari06][DEBUG ] Nothing to do
+[andvari06][INFO  ] Running command: sudo ceph --version
+[andvari06][DEBUG ] ceph version 0.94.10 (b1e0532418e4631af01acbc0cedd426f1905f4af)
+[ceph_deploy.conf][DEBUG ] found configuration file at: /labhome/sashakot/.cephdeploy.conf
+[ceph_deploy.cli][INFO  ] Invoked (1.5.25): /usr/bin/ceph-deploy mon create-initial
+[ceph_deploy][ERROR ] ConfigError: Cannot load config: [Errno 2] No such file or directory: 'ceph.conf'; has `ceph-deploy new` been run in this directory?
+

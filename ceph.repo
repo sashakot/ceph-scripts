@@ -1,0 +1,27 @@
+[Ceph]
+name=Ceph packages for $basearch
+baseurl=http://download.ceph.com/rpm-hammer/el7/$basearch
+enabled=1
+gpgcheck=1
+type=rpm-md
+priority=2
+gpgkey=https://download.ceph.com/keys/release.asc
+
+[Ceph-noarch]
+name=Ceph noarch packages
+baseurl=http://download.ceph.com/rpm-hammer/el7/noarch
+enabled=1
+gpgcheck=1
+type=rpm-md
+priority=2
+gpgkey=https://download.ceph.com/keys/release.asc
+
+[ceph-source]
+name=Ceph source packages
+baseurl=http://download.ceph.com/rpm-hammer/el7/SRPMS
+enabled=1
+gpgcheck=1
+type=rpm-md
+priority=2
+gpgkey=https://download.ceph.com/keys/release.asc
+
